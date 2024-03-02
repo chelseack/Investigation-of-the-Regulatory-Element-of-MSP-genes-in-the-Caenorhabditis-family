@@ -59,14 +59,15 @@ labels_x = df.columns
 df_numeric = df.iloc[1:, 1:].astype(float)
 
 # Heatmap plot 
-# sns.clustermap(df_numeric, row_cluster=False, col_cluster=False, cmap='Blues')
-# plt.xticks(ticks=range(len(labels_x)), labels=labels_x, rotation=45, ha='right')
-# plt.yticks(ticks=range(len(labels_y)), labels=labels_y)
-# plt.show()
+sns.clustermap(df_numeric, row_cluster=False, col_cluster=False, cmap='Blues')
+plt.xticks(ticks=range(len(labels_x)), labels=labels_x, rotation=45, ha='right')
+plt.yticks(ticks=range(len(labels_y)), labels=labels_y)
+plt.show()
 
 # Heatmap plot 
 #sns.clustermap(sim.iloc[o, o], vmin=0, vmax=5, row_cluster=False, col_cluster=False, cmap='Blues')
 
+# Generate clusters and logo
 cluster = pd.DataFrame()
 def relative_info_content(pwm):
     p = pwm/np.sum(pwm, axis = 1)[:,np.newaxis]
